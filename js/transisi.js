@@ -119,34 +119,34 @@ var PageTransitions = (function () {
             case 3:
                 outClass = 'halaman-rotateFoldLeft';
                 inClass = 'halaman-moveFromRightFade';
-                var textWrapper = document.querySelector('.ml11 .letters');
+                var textWrapper = document.querySelector('.ml14 .letters');
                 textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
 
                 anime.timeline({
                         loop: false
                     })
                     .add({
-                        targets: '.ml11 .line',
+                        targets: '.ml14 .line',
                         scaleY: [0, 1],
                         opacity: [0.5, 1],
                         easing: "easeOutExpo",
                         duration: 1000
                     })
                     .add({
-                        targets: '.ml11 .line',
-                        translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+                        targets: '.ml14 .line',
+                        translateX: [0, document.querySelector('.ml14 .letters').getBoundingClientRect().width + 10],
                         easing: "easeOutExpo",
                         duration: 1000,
                         delay: 1200
                     }).add({
-                        targets: '.ml11 .letter',
+                        targets: '.ml14 .letter',
                         opacity: [0, 1],
                         easing: "easeOutExpo",
                         duration: 600,
                         offset: '-=775',
                         delay: (el, i) => 34 * (i + 1)
                     }).add({
-                        targets: '.ml11',
+                        targets: '.ml14',
                         opacity: 1,
                         duration: 1000,
                         easing: "easeOutExpo",
